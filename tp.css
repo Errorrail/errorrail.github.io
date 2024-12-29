@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    color: black;
+    padding: 50px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-row img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.image-row img:hover {
+    transform: scale(1.1);
+}
+
+.filler-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2em;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(20px);
+}
+
+.filler-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+#text {
+    font-size: 3rem;
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 0.75s ease-in-out;
+}
+h1::after {
+    content: "";
+    display: block;
+    width: 70%; /* Adjust this value to control the length of the line */
+    margin: 10px auto 0; /* Center the line and add space from the text */
+    border-bottom: 3px solid #000; /* Line thickness and color */
+}
