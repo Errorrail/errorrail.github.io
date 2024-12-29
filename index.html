@@ -10,7 +10,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #ffffff;
             font-family: Arial, sans-serif;
         }
 
@@ -20,12 +20,12 @@
             opacity: 1;
             transition: opacity 0.75s ease-in-out;
         }
-        h1 {
-            display: inline-block;
-            border-bottom: 3px solid #2764F3; /* Line thickness and color */
-            padding-bottom: 10px; /* Space between text and line */
-            width: 80%; /* Adjust this value to make the line shorter */
-            margin: 0 auto; /* Centers the line horizontally */
+        h1::after {
+            content: "";
+            display: block;
+            width: 70%; /* Adjust this value to control the length of the line */
+            margin: 10px auto 0; /* Center the line and add space from the text */
+            border-bottom: 3px solid #000; /* Line thickness and color */
         }
     </style>
 </head>
@@ -36,12 +36,12 @@
         const texts = [
             "Welcome to my website",
             "Bienvenidos a mi sitio web",
+            "Bienvenue sur mon site",
+            "Herzlich Willkommen auf meiner Website",
             "歡迎來到我的網站",
             "私のウェブサイトへようこそ",
             "مرحبا بكم في موقعي",
-            "Bienvenue sur mon site",
             "Добро пожаловать на мой сайт",
-            "Herzlich Willkommen auf meiner Website",
         ];
         const colors = [
             "rgba(0, 0, 0, 1)",
