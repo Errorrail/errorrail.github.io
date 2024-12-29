@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>douv</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico">
-  </head>
-  <body>
-    <main>
-        <h1>Welcome!</h1>  
-    </main>
-    <script src="index.js"></script>
-  </body>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        #text {
+            font-size: 3rem;
+            font-weight: bold;
+            animation: fontFade 6s infinite;
+        }
+
+        @keyframes fontFade {
+            0% { font-family: "Arial", sans-serif; }
+            25% { font-family: "Courier New", monospace; }
+            50% { font-family: "Georgia", serif; }
+            75% { font-family: "Verdana", sans-serif; }
+            100% { font-family: "Arial", sans-serif; }
+        }
+    </style>
+</head>
+<body>
+    <div id="text">Watch my font change!</div>
+</body>
 </html>
