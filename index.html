@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Fade Effect</title>
+    <title>douv</title>
     <style>
         body {
             display: flex;
             justify-content: center;
-            align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
@@ -21,21 +20,28 @@
             opacity: 1;
             transition: opacity 0.75s ease-in-out;
         }
+        h1 {
+            display: inline-block;
+            border-bottom: 3px solid #2764F3; /* Line thickness and color */
+            padding-bottom: 10px; /* Space between text and line */
+            width: 80%; /* Adjust this value to make the line shorter */
+            margin: 0 auto; /* Centers the line horizontally */
+        }
     </style>
 </head>
 <body>
-    <div id="text">Text 1</div>
+    <h1><div id="text">Welcome to my website</div></h1>
     <script>
         const textElement = document.getElementById("text");
         const texts = [
             "Welcome to my website",
             "Bienvenidos a mi sitio web",
             "歡迎來到我的網站",
-            "私のウェブサイトへようこそ"
-            "مرحبا بكم في موقعي"
-            "Bienvenue sur mon site"
-            "Добро пожаловать на мой сайт"
-            "Herzlich Willkommen auf meiner Website"
+            "私のウェブサイトへようこそ",
+            "مرحبا بكم في موقعي",
+            "Bienvenue sur mon site",
+            "Добро пожаловать на мой сайт",
+            "Herzlich Willkommen auf meiner Website",
         ];
         const colors = [
             "rgba(0, 0, 0, 1)",
