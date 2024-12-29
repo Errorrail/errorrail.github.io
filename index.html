@@ -18,20 +18,15 @@
         #text {
             font-size: 3rem;
             font-weight: bold;
-            animation: fontFade 6s infinite, fadeEffect 6s infinite;
+            animation: fontFade 6s infinite;
         }
 
         @keyframes fontFade {
-            0% { font-family: "Arial", sans-serif; }
-            25% { font-family: "Courier New", monospace; }
-            50% { font-family: "Georgia", serif; }
-            75% { font-family: "Verdana", sans-serif; }
-            100% { font-family: "Arial", sans-serif; }
-        }
-
-        @keyframes fadeEffect {
-            0%, 100% { color: rgba(0, 0, 0, 1); }
-            50% { color: rgba(0, 0, 0, 0.3); }
+            0% { font-family: "Arial", sans-serif; color: rgba(0, 0, 0, 1); }
+            25% { font-family: "Courier New", monospace; color: rgba(0, 0, 0, 0.7); }
+            50% { font-family: "Georgia", serif; color: rgba(0, 0, 0, 0.4); }
+            75% { font-family: "Verdana", sans-serif; color: rgba(0, 0, 0, 0.7); }
+            100% { font-family: "Arial", sans-serif; color: rgba(0, 0, 0, 1); }
         }
     </style>
 </head>
