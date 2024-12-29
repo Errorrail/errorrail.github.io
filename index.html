@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Font Fade Effect</title>
+    <title>Text Fade Effect</title>
     <style>
         body {
             display: flex;
@@ -18,22 +18,47 @@
         #text {
             font-size: 3rem;
             font-weight: bold;
-            animation: fontFade 6s infinite;
-        }
-
-        @keyframes fontFade {
-            0% { font-family: "Arial", sans-serif; color: rgba(0, 0, 0, 1); }
-            25% { font-family: "Courier New", monospace; color: rgba(0, 0, 0, 0.7); }
-            50% { font-family: "Georgia", serif; color: rgba(0, 0, 0, 0.4); }
-            75% { font-family: "Verdana", sans-serif; color: rgba(0, 0, 0, 0.7); }
-            100% { font-family: "Arial", sans-serif; color: rgba(0, 0, 0, 1); }
+            opacity: 1;
+            transition: opacity 0.75s ease-in-out;
         }
     </style>
 </head>
 <body>
-    <div id="text">Watch my font change!</div>
+    <div id="text">Text 1</div>
     <script>
-        // Additional interactivity can be added here if needed
+        const textElement = document.getElementById("text");
+        const texts = [
+            "Welcome to my website",
+            "Bienvenidos a mi sitio web",
+            "歡迎來到我的網站",
+            "私のウェブサイトへようこそ"
+            "مرحبا بكم في موقعي"
+            "Bienvenue sur mon site"
+            "Добро пожаловать на мой сайт"
+            "Herzlich Willkommen auf meiner Website"
+        ];
+        const colors = [
+            "rgba(0, 0, 0, 1)",
+            "rgba(0, 0, 0, 0.7)",
+            "rgba(0, 0, 0, 0.4)",
+            "rgba(0, 0, 0, 0.7)"
+        ];
+        let index = 1; // Start from the second text
+
+        function changeText() {
+            textElement.style.opacity = 0;
+            setTimeout(() => {
+                textElement.textContent = texts[index];
+                textElement.style.color = colors[index];
+                textElement.style.opacity = 1;
+                index = (index + 1) % texts.length;
+            }, 750); // Matches the fade-out duration
+        }
+
+        setTimeout(() => { // Initial delay before starting the interval
+            changeText();
+            setInterval(changeText, 3000); // Total cycle time (1.5s fade-out + 1.5s fade-in)
+        }, 3000);
     </script>
 </body>
 </html>
