@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>douv</title>
+    <title>Font Fade Effect</title>
     <style>
         body {
             display: flex;
@@ -18,7 +18,7 @@
         #text {
             font-size: 3rem;
             font-weight: bold;
-            animation: fontFade 6s infinite;
+            animation: fontFade 6s infinite, fadeEffect 6s infinite;
         }
 
         @keyframes fontFade {
@@ -28,9 +28,17 @@
             75% { font-family: "Verdana", sans-serif; }
             100% { font-family: "Arial", sans-serif; }
         }
+
+        @keyframes fadeEffect {
+            0%, 100% { color: rgba(0, 0, 0, 1); }
+            50% { color: rgba(0, 0, 0, 0.3); }
+        }
     </style>
 </head>
 <body>
     <div id="text">Watch my font change!</div>
+    <script>
+        // Additional interactivity can be added here if needed
+    </script>
 </body>
 </html>
