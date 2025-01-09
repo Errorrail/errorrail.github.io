@@ -5,15 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>douv</title>
     <style>
+
         body {
-            display: flex;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #ffffff;
             font-family: Arial, sans-serif;
+            background: url('background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden;
         }
 
+        .container {
+            text-align: center;
+            color: black;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .image-row img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .image-row img:hover {
+            transform: scale(1.1);
+        }
+
+        .filler-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 2em;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
+        }
+
+        .filler-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #white {
+            color:white;
+            font-size: 10px;
+        }
         #text {
             font-size: 3rem;
             font-weight: bold;
@@ -30,9 +86,18 @@
     </style>
 </head>
 <body>
-    <h1><div id="text">Welcome to my website</div></h1>
+    <div class="container">
+        <h1><div id="text">Welcome to my website</div></h1>
+        <p>more text yadayada blah blah blah</p>
+        <div class="image-row">
+            <img src="image1.png" alt="image 1">
+            <img src="image2.png" alt="image 2">
+        </div>
+    </div>
+    <div class="filler-section">sample text yadayada balh blah blah</div>
+    <p id="white">Note: i used google translate for the cool changing text above, if i mistranslated smth idgas</p>
     <script>
-        const textElement = document.getElementById("text");
+                const textElement = document.getElementById("text");
         const texts = [
             "Welcome to my website",
             "Bienvenidos a mi sitio web",
@@ -40,7 +105,6 @@
             "Herzlich Willkommen auf meiner Website",
             "歡迎來到我的網站",
             "私のウェブサイトへようこそ",
-            "مرحبا بكم في موقعي",
             "Добро пожаловать на мой сайт",
         ];
         const colors = [
@@ -65,6 +129,23 @@
             changeText();
             setInterval(changeText, 3000); // Total cycle time (1.5s fade-out + 1.5s fade-in)
         }, 3000);
+
+        const sections = document.querySelectorAll('.filler-section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
     </script>
+    
 </body>
 </html>
