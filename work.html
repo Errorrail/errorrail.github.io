@@ -16,22 +16,31 @@
                 font-weight: bold;
                 opacity: 1;
             }
+            .image-row img {
+                width: 300px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+                transition: transform 0.3s ease;
+            }
+
+            .image-row img:hover {
+                transform: scale(1.1);
+            }
+            .image-row {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                padding: 20px;
+            }
         </style>
         <h1>this is what i have done in life</h1>
-        <script>
-            const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                } else {
-                    entry.target.classList.remove('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+        <div class="image-row">
+            <p>sample text1: </p>
+            <img src="image1.png" alt="image 1">
+            <p>sample text2: </p>
+            <img src="image2.png" alt="image 2">
+        </div>
     </body>
 </html>
