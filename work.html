@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>douv - work</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <style>
+            h1 {
+                text-align: center;
+                margin-bottom: 20px;
+                font-size: 3rem;
+                font-weight: bold;
+                opacity: 1;
+            }
+        </style>
+        <h1>this is what i have done in life</h1>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    </body>
+</html>
