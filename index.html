@@ -44,7 +44,13 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease;
         }
-
+        .form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 50px;
+        }
         .image-row img:hover {
             transform: scale(1.1);
         }
@@ -88,13 +94,16 @@
 <body>
     <div class="container">
         <h1><div id="text">Welcome to my website</div></h1>
-        <p>more text yadayada blah blah blah</p>
+        <p>this is my website</p>
         <div class="image-row">
-            <img src="image1.png" alt="image 1">
-            <img src="image2.png" alt="image 2">
+            <img src="https://th.bing.com/th/id/R.ab560bba9cd0e71c93e8a991e24b59fe?rik=lCvgQzaNJNeqeA&pid=ImgRaw&r=0" alt="image 1">
         </div>
+        <form action="/work.html"> 
+            <button style="width: 200px; height: 50px; font-size: 25px" type="submit">work</button>
+            <input style="width: 200px; height: 50px; font-size: 25px" type="button" onclick="window.location.href='/contact.html';" value="contact me" />
+         </form>
     </div>
-    <div class="filler-section">sample text yadayada balh blah blah</div>
+    <input style="width: 50px; height: 15px; font-size:7.2px" type="button" onclick="window.location.href='/legalnotes.html';" value="legal notes" />
     <script>
                 const textElement = document.getElementById("text");
         const texts = [

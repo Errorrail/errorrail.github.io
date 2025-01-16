@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>why do you care</title>
+</head>
+<body>
+   <h1 class="p">why do you care?</h1>
+    <img src="https://media.giphy.com/media/xT5LMJ4P7HT1v1Ae40/giphy.gif">
+    instead of looking here, look at
+    <script>
+    const texts = [
+        "homer simpsons gifs, https://tenor.com/search/homer-simpson-gifs",
+        "grilled cheese sandwichs, https://www.onceuponachef.com/recipes/grilled-cheese.html",
+        "free movies, https://yts.mx/"
+    ];
+    function pickRandomText() {
+        const randomIndex = Math.floor(Math.random() * texts.length);
+        document.getElementById('randomText').innerText = texts[randomIndex];
+    }
+    </script>
+</body>
+</html>
