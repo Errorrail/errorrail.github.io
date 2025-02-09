@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>douv - main</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            color: black;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .image-row img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        .form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 50px;
+        }
+        .image-row img:hover {
+            transform: scale(1.1);
+        }
+
+        .filler-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 2em;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
+        }
+
+        .filler-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #white {
+            color:white;
+            font-size: 10px;
+        }
+        #text {
+            font-size: 3rem;
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 0.75s ease-in-out;
+        }
+        h1::after {
+            content: "";
+            display: block;
+            width: 70%; /* Adjust this value to control the length of the line */
+            margin: 10px auto 0; /* Center the line and add space from the text */
+            border-bottom: 3px solid #000; /* Line thickness and color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><div id="text">Welcome to my website</div></h1>
+        <p>this is my website</p>
+        <div class="image-row">
+            <img src="https://th.bing.com/th/id/R.ab560bba9cd0e71c93e8a991e24b59fe?rik=lCvgQzaNJNeqeA&pid=ImgRaw&r=0" alt="image 1">
+        </div>
+        <form action="/work.html"> 
+            <button style="width: 200px; height: 50px; font-size: 25px" type="submit">work</button>
+            <input style="width: 200px; height: 50px; font-size: 25px" type="button" onclick="window.location.href='/contact.html';" value="contact me" />
+         </form>
+    </div>
+    <input style="width: 50px; height: 15px; font-size:7.2px" type="button" onclick="window.location.href='/legalnotes.html';" value="legal notes" />
+    <script>
+                const textElement = document.getElementById("text");
+        const texts = [
+            "Welcome to my website",
+            "Bienvenidos a mi sitio web",
+            "Bienvenue sur mon site",
+            "Herzlich Willkommen auf meiner Website",
+            "歡迎來到我的網站",
+            "私のウェブサイトへようこそ",
+            "Добро пожаловать на мой сайт",
+        ];
+        const colors = [
+            "rgba(0, 0, 0, 1)",
+            "rgba(0, 0, 0, 0.7)",
+            "rgba(0, 0, 0, 0.4)",
+            "rgba(0, 0, 0, 0.7)"
+        ];
+        let index = 1; // Start from the second text
+
+        function changeText() {
+            textElement.style.opacity = 0;
+            setTimeout(() => {
+                textElement.textContent = texts[index];
+                textElement.style.color = colors[index];
+                textElement.style.opacity = 1;
+                index = (index + 1) % texts.length;
+            }, 750); // Matches the fade-out duration
+        }
+
+        setTimeout(() => { // Initial delay before starting the interval
+            changeText();
+            setInterval(changeText, 3000); // Total cycle time (1.5s fade-out + 1.5s fade-in)
+        }, 3000);
+
+        const sections = document.querySelectorAll('.filler-section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    
+</body>
+</html>
